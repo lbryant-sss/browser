@@ -5,18 +5,26 @@
 1. **Frontend Interface (Tkinter GUI):**
    - Handles user interaction through a graphical interface.
    - Includes elements such as the address bar, navigation buttons, and display area for web content.
+   - *Status: Implemented*
+   - *Technology: Tkinter (Python GUI library)*
 
 2. **Backend Logic:**
    - Manages the core functionality of the browser application.
    - Responsible for processing user input, handling navigation requests, and fetching web content.
+   - *Status: Implemented*
+   - *Technology: Python*
 
 3. **Database Integration (MongoDB):**
    - Stores browser history and bookmarks.
    - Allows for retrieval and management of saved data.
+   - *Status: Yet to be implemented (Unfinished)*
+   - *Technology: MongoDB*
 
 4. **Conversion to .exe:**
    - Utilizes tools such as PyInstaller or cx_Freeze to convert Python scripts into standalone executable files.
    - Ensures that the application can be easily installed and run on Windows machines without requiring Python to be installed.
+   - *Status: Yet to be implemented (Unfinished)*
+   - *Technology: PyInstaller, cx_Freeze*
 
 ## Interaction Flow:
 
