@@ -52,16 +52,22 @@ class Features:
         entry.pack(side="left")
 
         #Go when enter is clicked
-        entry.bind("<Return>", lambda event: self.button_clicked())
+        entry.bind("<Return>", lambda event: self.button_clicked(event, entry))
         
-    def button_clicked(self):
-        label = Label(self.root, text='Button Clicked')
-        label.pack()
-        print("Button Clicked")
+    def button_clicked(self, event, entry):
+        if not event or entry.get():
+            result_frame = Frame(self.root)
+            result_frame.pack()
+
+                # Add a label to the frame
+            label = Label(result_frame, text='Button Clicked')
+            label.pack()
+            print("Button Clicked")
+            
+            
     
     def all_features(self):
         self.address_bar()
-        self.button_clicked()
         
 
 def main():
