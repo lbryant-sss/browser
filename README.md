@@ -11,13 +11,13 @@ This is a simple browser application developed using Python and Tkinter.
 
 ## Usage
 
-1. Clone the repository:
-git clone https://github.com/your-username/browser-app.git
-
-2. Navigate to the project directory:
+1. Clone the repository.
 
 
-3. Run the application:
+2. Navigate to the project directory.
+
+
+3. Run the application.
 
 
 4. TO DO: Implement ~ Enter a URL in the address bar and press Enter or click the Go button to navigate to the website.
