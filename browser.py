@@ -1,4 +1,17 @@
 from tkinter import *
+import requests
+from tkhtmlview import HTMLLabel
+
+
+class HTMLFetcher:
+    @staticmethod
+    def fetch_html_content(url):
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.text
+        else:
+            return f"Failed to fetch content from {url}"
+
 
 class WindowUx:
     def __init__(self):
@@ -56,16 +69,32 @@ class Features:
         
     def button_clicked(self, event, entry):
         if not event or entry.get():
-            result_frame = Frame(self.root)
-            result_frame.pack()
-
-                # Add a label to the frame
-            label = Label(result_frame, text='Button Clicked')
-            label.pack()
-            print("Button Clicked")
-            
-            
+            url = entry.get()
+            html_content = HTMLFetcher.fetch_html_content(url)
+            self.display_html_content(html_content)
     
+    def display_html_content(self, html_content):
+        result_frame = Frame(self.root)
+        result_frame.pack(fill=BOTH, expand=True)
+
+        # Create a Text widget
+        text = Text(result_frame, wrap=WORD)
+        text.pack(side=LEFT, fill=BOTH, expand=True)
+
+        # Add Scrollbars
+        scrollbar_y = Scrollbar(result_frame, orient=VERTICAL, command=text.yview)
+        scrollbar_y.pack(side=RIGHT, fill=Y)
+        scrollbar_x = Scrollbar(result_frame, orient=HORIZONTAL, command=text.xview)
+        scrollbar_x.pack(side=BOTTOM, fill=X)
+
+        # Configure Text widget to use Scrollbars
+        text.config(yscrollcommand=scrollbar_y.set, xscrollcommand=scrollbar_x.set)
+
+        # Insert HTML content into the Text widget
+        text.insert(END, html_content)
+
+
+            
     def all_features(self):
         self.address_bar()
         
