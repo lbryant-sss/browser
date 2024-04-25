@@ -26,6 +26,12 @@
    - *Status: Yet to be implemented (Unfinished)*
    - *Technology: PyInstaller, cx_Freeze*
 
+5. **Frontend Rendering of Web Content:**
+   - Renders fetched web content (HTML, CSS, JavaScript) on the display area of the frontend interface.
+   - Handles parsing and rendering of text, images, and other elements retrieved from web pages.
+   - *Status: Implemented*
+   - *Technology: Tkinter (Python GUI library)*
+
 ## Interaction Flow:
 
 1. **User Interaction:**
